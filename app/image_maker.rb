@@ -14,7 +14,7 @@ class ImageMaker
   def draw_image
     @pixel_maps = (1..@height).map{ (1..@with).map{"O"} }
 
-    # show the preview image
+    # show the preview of the image
     @pixel_maps.each do |e|
     	puts e.join(' ')
     end
@@ -65,7 +65,7 @@ class ImageMaker
 	  		end
 	  	end
 	  else
-	  	puts "wrong number of argument. :]"
+	  	puts "wrong number of arguments. :]"
 	  end
   end
 
@@ -90,7 +90,7 @@ class ImageMaker
 	  		end
 	  	end 
   	else
-  		puts "wrong number of argument. :]"
+  		puts "wrong number of arguments. :]"
   	end
   end
 
