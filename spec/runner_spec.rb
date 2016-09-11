@@ -5,7 +5,7 @@ describe 'BitMap' do
 	# test command line
 
 	before do
-    @image = ImageMaker.new
+    @image = BitmapEditor.new
   end
 	
 	describe 'new image' do

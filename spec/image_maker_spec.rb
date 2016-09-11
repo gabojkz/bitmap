@@ -43,7 +43,7 @@ describe 'ImageMaker' do
 	  end
 
 	  it "draw the horizontal pixel image with the color F" do
-	    bitmap = "OOOOOOOFFOOOOOOOOOOOOOOOOOOOOO"
+	    bitmap = "OOOOOOOOOOOOOOOOFFOOOOOOOOOOOO"
 	    @image.set_horizontal_color(2,3,4,"F")
 
 	    # test horizontal draw
