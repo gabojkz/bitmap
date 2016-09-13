@@ -67,15 +67,15 @@ class BitmapEditor
     end
 
     def color_pixels(args)
-      @@image == 0 ? show_error(2) : (args.length === 3 ? @@image.colour(*args) : show_error(1))
+      @@image == 0 ? show_error(2) : (args.length == 3 ? @@image.colour(*args) : show_error(1))
     end
 
     def vertical_draw(args)
-      @@image == 0 ? show_error(2) : (args.length === 4 ? @@image.set_vertical_color(*args) : show_error(1))
+      @@image == 0 ? show_error(2) : (args.length == 4 ? @@image.set_vertical_color(*args) : show_error(1))
     end
 
     def horizontal_draw(args)
-      @@image == 0 ? show_error(2) : (args.length === 4 ? @@image.set_horizontal_color(*args) : show_error(1))
+      @@image == 0 ? show_error(2) : (args.length == 4 ? @@image.set_horizontal_color(*args) : show_error(1))
     end
 
     def show_image
