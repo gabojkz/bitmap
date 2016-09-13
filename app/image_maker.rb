@@ -46,52 +46,43 @@ class ImageMaker
   end
 
   def set_vertical_color(*args)
-  	if args.length >= 3 && args.length < 5
-	  	x  = (args[0].to_i - 1)
-      # => position
-	  	
-      y1 = (args[1].to_i - 1)
-      # => color start
+  	x  = (args[0].to_i - 1)
+    # => position
+  	
+    y1 = (args[1].to_i - 1)
+    # => color start
 
-	  	y2 = (args[2].to_i - 1)
-      # => color end
+  	y2 = (args[2].to_i - 1)
+    # => color end
 
-	  	color = args[3] ||= "C"
+  	color = args[3] ||= "C"
 
-	  	# set the color
-	  	(0..@height).each_with_index do |row, i|
-	  		if i >= y1 && i <= y2
-	  			@pixel_maps[row][x] = color.upcase
-	  		end
-	  	end
-	  else
-	  	puts "wrong number of arguments. :]"
-	  end
+  	# set the color
+  	(0..@height).each_with_index do |row, i|
+  		if i >= y1 && i <= y2
+  			@pixel_maps[row][x] = color.upcase
+  		end
+  	end
   end
 
-  def set_horizontal_color(*args)
-  	if args.length >= 3 && args.length < 5
-	  	
-      x1 = (args[0].to_i - 1)
-	  	# => color start
-      
-      x2 = (args[1].to_i - 1)
-      # =>  color end
+  def set_horizontal_color(*args)	
+    x1 = (args[0].to_i - 1)
+  	# => color start
+    
+    x2 = (args[1].to_i - 1)
+    # =>  color end
 
-	  	y = (args[2].to_i - 1)
-      # => row
+  	y = (args[2].to_i - 1)
+    # => row
 
-	  	color = args[3] ||= "C"
+  	color = args[3] ||= "C"
 
-	  	# set the color
-	  	(0..@with).each_with_index do |col, i|
-	  		if i >= x1 && i <= x2
-	  			@pixel_maps[y][col] = color.upcase
-	  		end
-	  	end 
-  	else
-  		puts "wrong number of arguments. :]"
-  	end
+  	# set the color
+  	(0..@with).each_with_index do |col, i|
+  		if i >= x1 && i <= x2
+  			@pixel_maps[y][col] = color.upcase
+  		end
+  	end 
   end
 
 end

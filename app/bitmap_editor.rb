@@ -59,35 +59,23 @@ class BitmapEditor
   private
     
     def create_image(args)
-      @image = ImageMaker.new(*args)
+      args.length == 2 ? @image = ImageMaker.new(*args) : show_error(1) 
     end
 
     def clear_table
-      @@image.clear
+      @@image == 0 ? show_error(2) : @@image.clear
     end
 
     def color_pixels(args)
-      if @@image == 0
-        puts " please create a new image "
-      else
-        @@image.colour(*args)
-      end
+      @@image == 0 ? show_error(2) : (args.length === 3 ? @@image.colour(*args) : show_error(1))
     end
 
     def vertical_draw(args)
-      if @@image == 0
-        puts " please create a new image "
-      else
-        @@image.set_vertical_color(*args)
-      end
+      @@image == 0 ? show_error(2) : (args.length === 4 ? @@image.set_vertical_color(*args) : show_error(1))
     end
 
     def horizontal_draw(args)
-      if @@image == 0
-        puts " please create a new image "
-      else
-        @@image.set_horizontal_color(*args)
-      end
+      @@image == 0 ? show_error(2) : (args.length === 4 ? @@image.set_horizontal_color(*args) : show_error(1))
     end
 
     def show_image
@@ -99,6 +87,15 @@ class BitmapEditor
     def exit_console
       puts 'goodbye!'
       return exit 0
+    end
+
+    def show_error(numError)
+      # display the correct error msg
+      error_args = "wrong number of arguments. :["
+      error_img  = "create a new image first please. :]"
+      msg_error  = numError == 1 ? error_args : error_img
+
+      puts msg_error
     end
 
     def show_help
