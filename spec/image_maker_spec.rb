@@ -59,15 +59,14 @@ describe 'ImageMaker' do
 	    expect(@image.clear.join()).to eq bitmap
 	  end
 
-	  it "clear the modify image" do
-	    bitmap = "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
-	    # change the image
-	    @image.colour(1,1,"A")
+	  it "It has arguments out the image size" do
+	  	bitmap = "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+	    # if the arguments are out of the image 
+	  	@image.set_horizontal_color(2,9,4,"F")
 
-	    # clear the image to its default value
-	    expect(@image.clear.join()).to eq bitmap
+	  	# the image is not changed
+	    expect(@image.pixel_maps.join()).to eq bitmap
 	  end
-
 	end
 
 end
